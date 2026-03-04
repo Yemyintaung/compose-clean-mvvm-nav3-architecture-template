@@ -24,26 +24,24 @@ To use these templates in your project, you must manually add the .ft (File Temp
     2.3. In the dialog, enter the Feature Name (e.g., Profile).
   
     2.4. Click OK. Android Studio will instantly generate:
-      2.4.1. ProfileScreen.kt (Compose View)
-      2.4.2. ProfileViewModel.kt (Hilt-injected)
-      2.4.3. ProfileState.kt, ProfileAction.kt, ProfileEvent.kt
-      2.4.4. navigation/ProfileEntry.kt (Nav3 Provider)
+    * `ProfileScreen.kt` (Compose View)
+    * `ProfileViewModel.kt` (Hilt-injected)
+    * `ProfileState.kt`, `ProfileAction.kt`, `ProfileEvent.kt`
+    * `navigation/ProfileEntry.kt` (Nav3 Provider)
    
-3. Navigation 3 Integration
+4. Navigation 3 Integration
    
     This template is built for Navigation 3. To link your new feature to the app's main navigation:
-  
-    3.1. In your :app or :navigation module, inject the EntryProviderScope.
-  
-    3.2. Call the generated entry provider in your NavDisplay:
+    * In your :app or :navigation module, inject the EntryProviderScope.
+    * Call the generated entry provider in your NavDisplay:
       
-        NavDisplay(
-            backstack = backstack,
-            onBack = { backstack.removeLast() }
-        ) {
-            profileEntry()
-            homeEntry()
-        }
+          NavDisplay(
+              backstack = backstack,
+              onBack = { backstack.removeLast() }
+          ) {
+              profileEntry()
+              homeEntry()
+          }
 
 5. Required Dependencies
    
